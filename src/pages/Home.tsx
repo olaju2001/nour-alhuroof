@@ -40,13 +40,17 @@ export function Home() {
             </h1>
           </div>
 
-          {/* Stars */}
-          <div className="flex items-center gap-1 bg-gold/20 rounded-2xl px-4 py-2">
+         {/* Stars — tap to open Rewards */}
+          <button
+            onClick={() => navigate('/rewards')}
+            className="flex items-center gap-1 bg-gold/20 rounded-2xl px-4 py-2 active:scale-95 transition-transform"
+          >
+            <span className="text-xl">🏆</span>
             <StarIcon size={22} color="#D4A017" />
             <span className="font-body font-black text-gold text-xl">
               {totalStars}
             </span>
-          </div>
+          </button>
         </div>
 
         {/* Progress bar */}
@@ -80,7 +84,7 @@ export function Home() {
       </div>
 
       {/* ── Letter Grid ───────────────────────────────────────── */}
-      <div className="relative z-10 px-4 grid grid-cols-4 gap-3">
+      <div className="relative z-10 px-4 grid grid-cols-4 gap-3" dir="rtl">
         {ARABIC_LETTERS.map((arabicChar, index) => {
           const letterId  = index + 1
           const letter    = letters.find(l => l.id === letterId)
@@ -127,7 +131,7 @@ export function Home() {
 
                   {/* Stars earned */}
                   {stars > 0 && (
-                    <div className="absolute top-1 right-1 flex">
+                    <div className="absolute top-1 left-1 flex">
                       {Array.from({ length: stars }).map((_, i) => (
                         <span key={i} className="text-gold text-[10px]">⭐</span>
                       ))}
@@ -135,8 +139,8 @@ export function Home() {
                   )}
 
                   {/* Mastered checkmark */}
-                  {mastered && (
-                    <div className="absolute bottom-1 right-1 text-success text-xs">✓</div>
+                {mastered && (
+                    <div className="absolute bottom-1 left-1 text-success text-xs">✓</div>
                   )}
                 </>
               )}
