@@ -2,12 +2,12 @@ import { useNavigate } from 'react-router-dom'
 import { useProgress }  from '../hooks/useProgress'
 import { useLetters }   from '../hooks/useLetters'
 import { IslamicBackground, CrescentMoon, StarIcon } from '../components/IslamicBackground'
+import { useState, useEffect } from 'react'
 
 const AVATARS: Record<number, string> = {
   1: '🧒', 2: '👦', 3: '🌙', 4: '🦜', 5: '⭐', 6: '🌺'
 }
 
-// All 28 Arabic letters (for locked display before data loads)
 const ARABIC_LETTERS = [
   'ا','ب','ت','ث','ج','ح','خ','د','ذ','ر',
   'ز','س','ش','ص','ض','ط','ظ','ع','غ','ف',
@@ -19,11 +19,42 @@ export function Home() {
   const { profile, getLetterProgress, isLetterUnlocked, masteredCount } = useProgress()
   const { letters } = useLetters()
 
+  // ── PWA Install logic ─────────────────────────────────────────
+  const [installPrompt, setInstallPrompt] = useState<any>(null)
+  const [showInstallTip, setShowInstallTip] = useState(false)
+  const [isInstalled, setIsInstalled] = useState(false)
+
+  useEffect(() => {
+    // Check if already running as installed PWA
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+      setIsInstalled(true)
+    }
+
+    // Capture Chrome/Android native install prompt
+    const handler = (e: any) => {
+      e.preventDefault()
+      setInstallPrompt(e)
+    }
+    window.addEventListener('beforeinstallprompt', handler)
+    return () => window.removeEventListener('beforeinstallprompt', handler)
+  }, [])
+
+  const handleInstall = async () => {
+    if (installPrompt) {
+      // Chrome/Android — trigger native prompt
+      installPrompt.prompt()
+      await installPrompt.userChoice
+      setInstallPrompt(null)
+    } else {
+      // Edge, Safari, Firefox — show manual instructions
+      setShowInstallTip(true)
+    }
+  }
+
   if (!profile) return null
 
-  const avatar      = AVATARS[profile.avatar_id] ?? '🌟'
-  const totalStars  = profile.total_stars
-  const unlockedCount = Object.values(profile.letters).filter(l => l.unlocked).length
+  const avatar     = AVATARS[profile.avatar_id] ?? '🌟'
+  const totalStars = profile.total_stars
 
   return (
     <div className="min-h-dvh bg-cream relative pb-8">
@@ -32,6 +63,7 @@ export function Home() {
       {/* ── Header ────────────────────────────────────────────── */}
       <div className="relative z-10 bg-teal pt-safe px-5 pb-6 rounded-b-[2rem] shadow-xl">
         <div className="flex items-center justify-between mb-4">
+
           {/* Greeting */}
           <div>
             <p className="font-body text-cream/70 text-sm">السلام عليكم!</p>
@@ -40,7 +72,7 @@ export function Home() {
             </h1>
           </div>
 
-         {/* Stars — tap to open Rewards */}
+          {/* Stars — tap to open Rewards */}
           <button
             onClick={() => navigate('/rewards')}
             className="flex items-center gap-1 bg-gold/20 rounded-2xl px-4 py-2 active:scale-95 transition-transform"
@@ -70,6 +102,20 @@ export function Home() {
             />
           </div>
         </div>
+
+        {/* Install button — hidden if already installed as PWA */}
+        {!isInstalled && (
+          <button
+            onClick={handleInstall}
+            className="mt-4 w-full flex items-center justify-center gap-2
+                       bg-white/15 hover:bg-white/25 text-cream
+                       rounded-2xl py-3 px-4 font-body font-bold text-base
+                       active:scale-95 transition-all duration-200 border border-white/20"
+          >
+            <span className="text-lg">📲</span>
+            App auf Gerät installieren
+          </button>
+        )}
       </div>
 
       {/* ── Section title ─────────────────────────────────────── */}
@@ -86,12 +132,12 @@ export function Home() {
       {/* ── Letter Grid ───────────────────────────────────────── */}
       <div className="relative z-10 px-4 grid grid-cols-4 gap-3" dir="rtl">
         {ARABIC_LETTERS.map((arabicChar, index) => {
-          const letterId  = index + 1
-          const letter    = letters.find(l => l.id === letterId)
-          const unlocked  = isLetterUnlocked(letterId)
-          const progress  = getLetterProgress(letterId)
-          const mastered  = progress.mastered
-          const stars     = progress.tracing_stars
+          const letterId = index + 1
+          const letter   = letters.find(l => l.id === letterId)
+          const unlocked = isLetterUnlocked(letterId)
+          const progress = getLetterProgress(letterId)
+          const mastered = progress.mastered
+          const stars    = progress.tracing_stars
 
           return (
             <button
@@ -101,8 +147,7 @@ export function Home() {
               className={`
                 relative flex flex-col items-center justify-center
                 rounded-2xl aspect-square
-                transition-all duration-200 select-none
-                border-2
+                transition-all duration-200 select-none border-2
                 ${unlocked
                   ? mastered
                     ? 'bg-success/15 border-success shadow-md active:scale-95'
@@ -139,7 +184,7 @@ export function Home() {
                   )}
 
                   {/* Mastered checkmark */}
-                {mastered && (
+                  {mastered && (
                     <div className="absolute bottom-1 left-1 text-success text-xs">✓</div>
                   )}
                 </>
@@ -165,8 +210,77 @@ export function Home() {
         </div>
       </div>
 
-      {/* ── Bottom space for safe area ─────────────────────────── */}
       <div className="h-8" />
+
+      {/* ── Install Instructions Popup ────────────────────────── */}
+      {showInstallTip && (
+        <div
+          className="fixed inset-0 bg-night/60 z-50 flex items-end justify-center p-4"
+          onClick={() => setShowInstallTip(false)}
+        >
+          <div
+            className="bg-white rounded-3xl p-6 w-full max-w-sm animate-bounce-in"
+            onClick={e => e.stopPropagation()}
+          >
+            <h3 className="font-body font-bold text-night text-xl mb-1 text-center">
+              📲 App installieren
+            </h3>
+            <p className="font-body text-night/50 text-sm text-center mb-5">
+              Wähle dein Gerät / Browser:
+            </p>
+
+            <div className="space-y-3">
+              {/* Android Chrome */}
+              <div className="bg-cream-dark rounded-2xl p-4">
+                <p className="font-body font-bold text-teal mb-1">
+                  🤖 Android — Chrome
+                </p>
+                <p className="font-body text-night/70 text-sm">
+                  Tippe auf <strong>⋮</strong> oben rechts →
+                  "Zum Startbildschirm hinzufügen"
+                </p>
+              </div>
+
+              {/* Android Edge */}
+              <div className="bg-cream-dark rounded-2xl p-4">
+                <p className="font-body font-bold text-teal mb-1">
+                  🤖 Android — Edge
+                </p>
+                <p className="font-body text-night/70 text-sm">
+                  Tippe auf <strong>···</strong> unten →
+                  "Zum Startbildschirm hinzufügen"
+                </p>
+              </div>
+
+              {/* iPhone Safari */}
+              <div className="bg-cream-dark rounded-2xl p-4">
+                <p className="font-body font-bold text-teal mb-1">
+                  🍎 iPhone — Safari
+                </p>
+                <p className="font-body text-night/70 text-sm">
+                  Tippe auf <strong>□↑</strong> teilen →
+                  "Zum Home-Bildschirm"
+                </p>
+              </div>
+
+              {/* Tip: use Chrome */}
+              <div className="bg-gold/10 border border-gold/30 rounded-2xl p-3">
+                <p className="font-body text-night/70 text-sm text-center">
+                  💡 <strong>Tipp:</strong> Chrome auf Android gibt die
+                  einfachste Installation!
+                </p>
+              </div>
+            </div>
+
+            <button
+              className="btn-kid w-full bg-teal text-white mt-5"
+              onClick={() => setShowInstallTip(false)}
+            >
+              Verstanden ✓
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
