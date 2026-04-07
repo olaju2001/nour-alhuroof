@@ -1,0 +1,264 @@
+{
+  "letters": [
+    {
+      "id": 1,
+      "arabic": "ا",
+      "name_arabic": "أَلِف",
+      "name_german": "Alif",
+      "transliteration": "Alif",
+      "pronunciation_guide": "Wie das 'A' in 'Apfel' – ein langer, klarer Vokal",
+      "memory_trick": "Alif steht gerade wie ein Turm! 🗼",
+      "similar_to": "A",
+      "color": "#D4A017",
+      "forms": {
+        "isolated": "ا",
+        "initial":  "ا",
+        "medial":   "ـا",
+        "final":    "ـا"
+      },
+      "audio": {
+        "name": "/audio/letters/alif.mp3",
+        "pronunciation": "/audio/letters/alif_pronunciation.mp3"
+      },
+      "vocabulary": [
+        {
+          "id": "alif_1",
+          "word": "أَسَد",
+          "transliteration": "Asad",
+          "german": "Löwe",
+          "emoji": "🦁",
+          "audio": "/audio/vocabulary/asad.mp3"
+        },
+        {
+          "id": "alif_2",
+          "word": "أَرْنَب",
+          "transliteration": "Arnab",
+          "german": "Kaninchen",
+          "emoji": "🐰",
+          "audio": "/audio/vocabulary/arnab.mp3"
+        },
+        {
+          "id": "alif_3",
+          "word": "أُمّ",
+          "transliteration": "Umm",
+          "german": "Mutter",
+          "emoji": "👩",
+          "audio": "/audio/vocabulary/umm.mp3"
+        }
+      ],
+      "tracing": {
+        "strokes": 1,
+        "description": "Eine gerade Linie von oben nach unten",
+        "steps": ["Beginne oben in der Mitte", "Ziehe eine gerade Linie nach unten"]
+      }
+    },
+    {
+      "id": 2,
+      "arabic": "ب",
+      "name_arabic": "بَاء",
+      "name_german": "Baa",
+      "transliteration": "Baa",
+      "pronunciation_guide": "Wie das 'B' in 'Ball' – ein weicher B-Laut",
+      "memory_trick": "Baa sieht aus wie ein Boot mit einem Punkt darunter! ⛵",
+      "similar_to": "B",
+      "color": "#1A6B6B",
+      "forms": {
+        "isolated": "ب",
+        "initial":  "بـ",
+        "medial":   "ـبـ",
+        "final":    "ـب"
+      },
+      "audio": {
+        "name": "/audio/letters/baa.mp3",
+        "pronunciation": "/audio/letters/baa_pronunciation.mp3"
+      },
+      "vocabulary": [
+        {
+          "id": "baa_1",
+          "word": "بَيْت",
+          "transliteration": "Bayt",
+          "german": "Haus",
+          "emoji": "🏠",
+          "audio": "/audio/vocabulary/bayt.mp3"
+        },
+        {
+          "id": "baa_2",
+          "word": "بَطّة",
+          "transliteration": "Batta",
+          "german": "Ente",
+          "emoji": "🦆",
+          "audio": "/audio/vocabulary/batta.mp3"
+        },
+        {
+          "id": "baa_3",
+          "word": "بَقَرَة",
+          "transliteration": "Baqara",
+          "german": "Kuh",
+          "emoji": "🐄",
+          "audio": "/audio/vocabulary/baqara.mp3"
+        }
+      ],
+      "tracing": {
+        "strokes": 2,
+        "description": "Eine Kurve unten, dann ein Punkt",
+        "steps": ["Zeichne eine flache Kurve von rechts nach links", "Setze einen Punkt darunter in der Mitte"]
+      }
+    },
+    {
+      "id": 3,
+      "arabic": "ت",
+      "name_arabic": "تَاء",
+      "name_german": "Taa",
+      "transliteration": "Taa",
+      "pronunciation_guide": "Wie das 'T' in 'Tisch' – ein klarer T-Laut",
+      "memory_trick": "Taa ist wie Baa, aber mit zwei Punkten oben! ✌️",
+      "similar_to": "T",
+      "color": "#C84B31",
+      "forms": {
+        "isolated": "ت",
+        "initial":  "تـ",
+        "medial":   "ـتـ",
+        "final":    "ـت"
+      },
+      "audio": {
+        "name": "/audio/letters/taa.mp3",
+        "pronunciation": "/audio/letters/taa_pronunciation.mp3"
+      },
+      "vocabulary": [
+        {
+          "id": "taa_1",
+          "word": "تُفَّاح",
+          "transliteration": "Tuffah",
+          "german": "Apfel",
+          "emoji": "🍎",
+          "audio": "/audio/vocabulary/tuffah.mp3"
+        },
+        {
+          "id": "taa_2",
+          "word": "تِمْسَاح",
+          "transliteration": "Timsah",
+          "german": "Krokodil",
+          "emoji": "🐊",
+          "audio": "/audio/vocabulary/timsah.mp3"
+        },
+        {
+          "id": "taa_3",
+          "word": "تَمْر",
+          "transliteration": "Tamr",
+          "german": "Dattel",
+          "emoji": "🌴",
+          "audio": "/audio/vocabulary/tamr.mp3"
+        }
+      ],
+      "tracing": {
+        "strokes": 3,
+        "description": "Wie Baa, aber mit zwei Punkten oben",
+        "steps": ["Zeichne eine flache Kurve von rechts nach links", "Setze einen Punkt oben links", "Setze einen Punkt oben rechts"]
+      }
+    },
+    {
+      "id": 4,
+      "arabic": "ث",
+      "name_arabic": "ثَاء",
+      "name_german": "Thaa",
+      "transliteration": "Thaa",
+      "pronunciation_guide": "Wie 'th' auf Englisch in 'think' – die Zunge leicht zwischen die Zähne",
+      "memory_trick": "Thaa hat drei Punkte – wie drei Sterne! ⭐⭐⭐",
+      "similar_to": "Th",
+      "color": "#4CAF7D",
+      "forms": {
+        "isolated": "ث",
+        "initial":  "ثـ",
+        "medial":   "ـثـ",
+        "final":    "ـث"
+      },
+      "audio": {
+        "name": "/audio/letters/thaa.mp3",
+        "pronunciation": "/audio/letters/thaa_pronunciation.mp3"
+      },
+      "vocabulary": [
+        {
+          "id": "thaa_1",
+          "word": "ثَعْلَب",
+          "transliteration": "Tha'lab",
+          "german": "Fuchs",
+          "emoji": "🦊",
+          "audio": "/audio/vocabulary/thalab.mp3"
+        },
+        {
+          "id": "thaa_2",
+          "word": "ثَوْر",
+          "transliteration": "Thawr",
+          "german": "Stier",
+          "emoji": "🐂",
+          "audio": "/audio/vocabulary/thawr.mp3"
+        },
+        {
+          "id": "thaa_3",
+          "word": "ثَلْج",
+          "transliteration": "Thalj",
+          "german": "Schnee",
+          "emoji": "❄️",
+          "audio": "/audio/vocabulary/thalj.mp3"
+        }
+      ],
+      "tracing": {
+        "strokes": 4,
+        "description": "Wie Baa, aber mit drei Punkten oben",
+        "steps": ["Zeichne eine flache Kurve", "Setze einen Punkt oben links", "Setze einen Punkt oben mitte", "Setze einen Punkt oben rechts"]
+      }
+    },
+    {
+      "id": 5,
+      "arabic": "ج",
+      "name_arabic": "جِيم",
+      "name_german": "Jim",
+      "transliteration": "Jim",
+      "pronunciation_guide": "Wie das 'J' in 'Jacke' – ein weicher J-Laut",
+      "memory_trick": "Jim sieht aus wie ein Haken mit einem Punkt in der Mitte! 🎣",
+      "similar_to": "J",
+      "color": "#9B59B6",
+      "forms": {
+        "isolated": "ج",
+        "initial":  "جـ",
+        "medial":   "ـجـ",
+        "final":    "ـج"
+      },
+      "audio": {
+        "name": "/audio/letters/jim.mp3",
+        "pronunciation": "/audio/letters/jim_pronunciation.mp3"
+      },
+      "vocabulary": [
+        {
+          "id": "jim_1",
+          "word": "جَمَل",
+          "transliteration": "Jamal",
+          "german": "Kamel",
+          "emoji": "🐪",
+          "audio": "/audio/vocabulary/jamal.mp3"
+        },
+        {
+          "id": "jim_2",
+          "word": "جَبَل",
+          "transliteration": "Jabal",
+          "german": "Berg",
+          "emoji": "⛰️",
+          "audio": "/audio/vocabulary/jabal.mp3"
+        },
+        {
+          "id": "jim_3",
+          "word": "جَزَرَة",
+          "transliteration": "Jazara",
+          "german": "Karotte",
+          "emoji": "🥕",
+          "audio": "/audio/vocabulary/jazara.mp3"
+        }
+      ],
+      "tracing": {
+        "strokes": 2,
+        "description": "Eine Kurve nach unten mit Haken, dann ein Punkt",
+        "steps": ["Zeichne eine runde Kurve nach unten mit einem Haken nach links", "Setze einen Punkt in die Mitte des Buchstabens"]
+      }
+    }
+  ]
+}

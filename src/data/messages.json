@@ -1,0 +1,46 @@
+{
+  "correct_answer": [
+    { "arabic": "ممتاز! أحسنت! 🌟",        "german": "Wunderbar! Sehr gut! 🌟" },
+    { "arabic": "ماشاء الله! رائع! ✨",      "german": "MashaAllah! Fantastisch! ✨" },
+    { "arabic": "أحسنت يا بطل! 🏆",          "german": "Toll gemacht, Held! 🏆" },
+    { "arabic": "صح! أنت ذكي جداً! 💛",      "german": "Richtig! Du bist so schlau! 💛" },
+    { "arabic": "الله يبارك فيك! 🌙",         "german": "Allah segne dich! 🌙" }
+  ],
+  "wrong_answer": [
+    { "arabic": "حاول مرة ثانية! تقدر! 💪",  "german": "Versuch es nochmal! Du schaffst das! 💪" },
+    { "arabic": "تقريباً! جرب مرة ثانية 🌸", "german": "Fast! Probier nochmal 🌸" },
+    { "arabic": "لا بأس! حاول مرة أخرى 🤗",  "german": "Kein Problem! Nochmal versuchen 🤗" },
+    { "arabic": "أنت تتعلم! استمر 🌟",        "german": "Du lernst! Weitermachen 🌟" },
+    { "arabic": "تقدر! جرب مجدداً 💛",        "german": "Du kannst es! Nochmal 💛" }
+  ],
+  "letter_complete": [
+    { "arabic": "أنهيت الحرف! ماشاء الله! 🎉",     "german": "Buchstabe geschafft! MashaAllah! 🎉" },
+    { "arabic": "حرف جديد تعلمته! رائع! ⭐",         "german": "Neuen Buchstaben gelernt! Super! ⭐" },
+    { "arabic": "الحمد لله! أتممت الحرف! 🌟",       "german": "Alhamdulillah! Buchstabe fertig! 🌟" }
+  ],
+  "tracing_good": [
+    { "arabic": "خطك جميل! ماشاء الله! 🖊️",   "german": "Schöne Schrift! MashaAllah! 🖊️" },
+    { "arabic": "رسمت الحرف بشكل رائع! ✨",    "german": "Buchstabe super gemalt! ✨" },
+    { "arabic": "أحسنت في الكتابة! 🌟",        "german": "Toll geschrieben! 🌟" }
+  ],
+  "tracing_try_again": [
+    { "arabic": "حاول مرة ثانية! ستتحسن! 💪", "german": "Nochmal versuchen! Du wirst besser! 💪" },
+    { "arabic": "تقريباً! جرب مجدداً 🌸",      "german": "Fast! Nochmal probieren 🌸" },
+    { "arabic": "استمر في المحاولة! 🤗",        "german": "Nicht aufgeben! 🤗" }
+  ],
+  "game_won": [
+    { "arabic": "فزت! أنت بطل! 🏆🎉",          "german": "Gewonnen! Du bist ein Champion! 🏆🎉" },
+    { "arabic": "ماشاء الله! لعبت رائعاً! ⭐",  "german": "MashaAllah! Toll gespielt! ⭐" },
+    { "arabic": "ممتاز! انتصرت! 🌟",           "german": "Ausgezeichnet! Du hast gewonnen! 🌟" }
+  ],
+  "daily_greeting": [
+    { "arabic": "أهلاً وسهلاً! هيا نتعلم! 🌙",     "german": "Willkommen! Lass uns lernen! 🌙" },
+    { "arabic": "السلام عليكم! مستعد للتعلم؟ 🌟", "german": "As-salamu alaykum! Bereit zum Lernen? 🌟" },
+    { "arabic": "يالله نبدأ! 🚀",                  "german": "Los geht's! 🚀" }
+  ],
+  "stars_earned": {
+    "one":   { "arabic": "نجمة! أحسنت! ⭐",         "german": "Ein Stern! Gut gemacht! ⭐" },
+    "two":   { "arabic": "نجمتان! رائع! ⭐⭐",       "german": "Zwei Sterne! Toll! ⭐⭐" },
+    "three": { "arabic": "ثلاث نجوم! ماشاء الله! ⭐⭐⭐", "german": "Drei Sterne! MashaAllah! ⭐⭐⭐" }
+  }
+}
